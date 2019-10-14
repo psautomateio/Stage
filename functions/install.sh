@@ -78,5 +78,5 @@ prune () {
 
 downloadpg() {
   rm -rf /psa/psablitz
-  git clone CHANGE REPO/PSABlitz.git /psa/psablitz
+  git clone https://github.com/psautomateio/PSABlitz.git /psa/psablitz
 }

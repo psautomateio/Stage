@@ -17,7 +17,7 @@
 
     - name: Cloning PSAutomate v0.1
       git:
-        repo: "CHANGE REPO ! PSABlitz.git"
+        repo: "https://github.com/psautomateio/PSABlitz.git"
         dest: /psa/psablitz
         version: "master"
         force: yes

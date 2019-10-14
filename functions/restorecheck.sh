@@ -9,12 +9,12 @@
 ################################################################################
 restorepsa() {
   rm -rf /psa/psablitz
-  git clone CHANGE REPO/PSABlitz.git /psa/psablitz
+  git clone https://github.com/psautomateio/PSABlitz.git /psa/psablitz
 }
 
 restorestage() {
   rm -rf /psa/psastage
-  git clone CHANGE REPO /Stage.git /psa/stage
+  git clone https://github.com/psautomateio/Stage.git /psa/stage
 }
 
 restorecheck() {
