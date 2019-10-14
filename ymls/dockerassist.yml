@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Title:      PSAutomate
+# Based On:   PGBlitz (Reference Title File)
+# Original Author(s):  Admin9705
+# PSAutomate Auther: fattylewis
+# URL:        https://psautomate.io - http://github.psautomate.io
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: True
+  tasks:
+########################################## Install Script
+  - name: Check DockerAssist Service
+    stat:
+      path: "/etc/systemd/system/assist.service"
+    register: assist
+
+  - name: Install Docker Reboot
+    template:
+      src: /psa/stage/ymls/templates/assist.sh
+      dest: /psa/var/assist.sh
+      force: yes
+
+########################################## Install Service
+  - name: Stop If DockerAssist Service Running
+    systemd: state=stopped name=assist
+    when: assist.stat.exists
+
+  - name: Install DockerAssist Service
+    template:
+      src: /psa/stage/ymls/templates/assist.service
+      dest: /etc/systemd/system/assist.service
+      force: yes
+
+  - name: Daemon-Reload
+    systemd: state=stopped name=assist daemon_reload=yes enabled=no
+
+  - name: Start DockerAssist
+    systemd: state=started name=assist enabled=yes

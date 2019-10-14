@@ -1,0 +1,16 @@
+    [Unit]
+    Description=Docker Assist
+    After=multi-user.target
+
+    [Service]
+    Type=simple
+    User=root
+    Group=root
+    ExecStart=/bin/bash /psa/var/assist.sh
+    TimeoutStopSec=20
+    KillMode=process
+    RemainAfterExit=yes
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target

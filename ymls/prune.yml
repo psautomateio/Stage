@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Title:      PSAutomate
+# Based On:   PGBlitz (Reference Title File)
+# Original Author(s):  Admin9705
+# PSAutomate Auther: fattylewis
+# URL:        https://psautomate.io - http://github.psautomate.io
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    # FACTS ######################################################################
+  - cron:
+      name: Build a Cron Job - Auto Prune
+      special_time: "hourly"
+      job: "prune 1>/dev/null 2>&1"
+      state: present
+    ignore_errors: yes

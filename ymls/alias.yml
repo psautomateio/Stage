@@ -1,0 +1,106 @@
+#!/bin/bash
+#
+# Title:      PSAutomate
+# Based On:   PGBlitz (Reference Title File)
+# Original Author(s):  Admin9705
+# PSAutomate Auther: fattylewis
+# URL:        https://psautomate.io - http://github.psautomate.io
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Autoremove
+      template:
+        src: /psa/stage/ymls/aliasfiles/autoremove
+        dest: /bin/autoremove
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: Backup
+      template:
+        src: /psa/stage/ymls/aliasfiles/backup
+        dest: /bin/backup
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: Install
+      template:
+        src: /psa/stage/ymls/aliasfiles/install
+        dest: /bin/install
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: NUFS
+      template:
+        src: /psa/stage/ymls/aliasfiles/nufs
+        dest: /bin/nufs
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: PSAFork
+      template:
+        src: /psa/stage/ymls/aliasfiles/psafork
+        dest: /bin/psafork
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: PSAUpdate
+      template:
+        src: /psa/stage/ymls/aliasfiles/psaupdate
+        dest: /bin/psaupdate
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: PSAVPN
+      template:
+        src: /psa/stage/ymls/aliasfiles/psavpn
+        dest: /bin/psavpn
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: Prune
+      template:
+        src: /psa/stage/ymls/aliasfiles/prune
+        dest: /bin/prune
+        force: yes
+        mode: 1000
+
+    - name: Reboot
+      template:
+        src: /psa/stage/ymls/aliasfiles/reboot
+        dest: /bin/reboot
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: SLIST
+      template:
+        src: /psa/stage/ymls/aliasfiles/slist
+        dest: /bin/slist
+        force: yes
+        mode: 1000
+
+    - name: SUFS
+      template:
+        src: /psa/stage/ymls/aliasfiles/sufs
+        dest: /bin/sufs
+        force: yes
+        mode: 0775
+        owner: 1000
+
+    - name: Upgrade
+      template:
+        src: /psa/stage/ymls/aliasfiles/upgrade
+        dest: /bin/upgrade
+        force: yes
+        mode: 0775
+        owner: 1000

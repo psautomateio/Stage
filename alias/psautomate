@@ -1,0 +1,41 @@
+path27="/psa/stage/functions"
+
+source "${path27}/core.sh"
+source "${path27}/keyvars.sh"
+source "${path27}/install.sh"
+source "${path27}/psainstall.sh"
+
+# Execute Key Variables from keyvars.sh
+keyvars
+
+# Make Critical Folders
+var59="/psa /psa/logs /psa/var /psa/data /psa/stage /psa/logs /psa/tmp"
+mkdir -p "${var59}"
+chmod 775 "${var59}"
+chown 1000:1000 "${var59}"
+
+# Ensures the user has proper permissions
+#sudocheck
+
+if [[ ! -e "/bin/psablitz" ]]; then
+  cp /psa/psablitz/menu/alias/templates/psablitz /bin/ &>/dev/null &
+  chown 1000:1000 /bin/psablitz
+  chmod 0755 /bin/psablitz
+fi
+
+# psastage
+readstage=$(jq -r '.psastage' /psa/psablitz/stage.json)
+if [[ ! -e "/psa/var/psa.stage" ]]; then
+echo "$readstage" > /psa/var/psa.stage
+touch /psa/var/psa.stage; fi
+storedstage=$(cat /psa/var/psa.stage)
+
+if [[ "$readstage" != "$storedstage" ]]; then
+cp /psa/stage/psacloner/solo/stage.sh /psa/tmp/stage.sh
+cp /psa/stage/psacloner/core/primary.yml /psa/tmp/primary.yml
+bash /psa/tmp/stage.sh
+echo "$readstage" > /psa/var/psa.stage; fi
+
+# if new install or update is conducted, runs through psainstall
+if [ -e "/psa/var/new.install" ]; then psainstall;
+elif [ -e "/psa/var/update.install" ]; then psainstall; fi

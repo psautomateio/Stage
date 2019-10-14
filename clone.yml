@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Title:      PSAutomate
+# Based On:   PGBlitz (Reference Title File)
+# Original Author(s):  Admin9705 - Deiteq
+# PSAutomate Auther: fattylewis
+# URL:        https://psautomate.io - http://github.psautomate.io
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+
+# INFO: Version Number 900 for example is 9.0.0 or 9110 would be 9.1.10; in most
+# cases, this is updated very little unless forcing a change in the stager
+
+    - name: Cloning PSAutomate v0.1
+      git:
+        repo: "CHANGE REPO ! PSABlitz.git"
+        dest: /psa/psablitz
+        version: "master"
+        force: yes

@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+
+    - name: Register Role
+      shell: "cat /psa/var/psacloner.projectname"
+      register: pname
+
+    - name: Register Role
+      shell: "cat /psa/var/psacloner.rolename"
+      register: prole
+
+    - name: Register User - Personal
+      shell: "cat /psa/var/{{prole.stdout}}.user"
+      register: user
+
+    - name: Register Branch - Personal
+      shell: "cat /psa/var/{{prole.stdout}}.branch"
+      register: branch
+
+    - name: 'Cloning Personal Forked Role'
+      git:
+        repo: 'https://github.com/{{user.stdout}}/{{pname.stdout}}'
+        dest: '/psa/{{prole.stdout}}'
+        version: '{{branch.stdout}}'
+        force: yes

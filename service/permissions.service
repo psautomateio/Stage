@@ -1,0 +1,16 @@
+[Unit]
+Description='PSAutomate Permissions Service'
+After=multi-user.target network-online.target
+
+[Service]
+Type=simple
+User=0
+Group=0
+ExecStart=/bin/bash /psa/stage/service/permissions.sh
+TimeoutStopSec=20
+KillMode=process
+RemainAfterExit=yes
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
