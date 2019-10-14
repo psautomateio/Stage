@@ -26,7 +26,7 @@
 
     - name: Clone Role
       git:
-        repo: "CHANGE REPO /{{pname.stdout}}"
+        repo: "https://github.com/psautomateio/{{pname.stdout}}"
         dest: "/psa/{{prole.stdout}}"
         version: "{{pversion.stdout}}"
         force: yes
