@@ -12,7 +12,7 @@
 echo 'apps' > /psa/var/psacloner.rolename
 echo 'Apps' > /psa/var/psacloner.roleproper
 echo 'Apps' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 echo 'psabox.sh' > /psa/var/psacloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
