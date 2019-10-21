@@ -12,7 +12,7 @@
 echo 'psapatrol' > /psa/var/psacloner.rolename
 echo 'PSAPatrol' > /psa/var/psacloner.roleproper
 echo 'PSAPatrol' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 echo "💬 PSA Patrol can boot idle plex users, users utilizing multiple

@@ -12,7 +12,7 @@
 echo 'multihd' > /psa/var/psacloner.rolename
 echo 'MultiHD' > /psa/var/psacloner.roleproper
 echo 'MultiHD' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 echo 'multihd.sh' > /psa/var/psacloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

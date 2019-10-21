@@ -12,7 +12,7 @@
 echo 'hetzner' > /psa/var/psacloner.rolename
 echo 'HCloud (Hetzner)' > /psa/var/psacloner.roleproper
 echo 'Hetzner' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 echo 'hcloud.sh' > /psa/var/psacloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

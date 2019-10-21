@@ -12,7 +12,7 @@
 echo 'psashield' > /psa/var/psacloner.rolename
 echo 'PSAShield' > /psa/var/psacloner.roleproper
 echo 'PSAShield' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 echo 'psashield.sh' > /psa/var/psacloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

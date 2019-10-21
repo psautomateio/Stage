@@ -12,7 +12,7 @@
 echo 'traefik' > /psa/var/psacloner.rolename
 echo 'Traefik' > /psa/var/psacloner.roleproper
 echo 'Traefik' > /psa/var/psacloner.projectname
-echo 'master' > /psa/var/psacloner.projectversion
+echo '0.2.0' > /psa/var/psacloner.projectversion
 echo 'traefik.sh' > /psa/var/psacloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
