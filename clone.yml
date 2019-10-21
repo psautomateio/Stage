@@ -15,7 +15,7 @@
 # INFO: Version Number 900 for example is 9.0.0 or 9110 would be 9.1.10; in most
 # cases, this is updated very little unless forcing a change in the stager
 
-    - name: Cloning PSAutomate v0.1
+    - name: Cloning PSAutomate v0.2.0
       git:
         repo: "https://github.com/psautomateio/PSABlitz.git"
         dest: /psa/psablitz
