@@ -19,5 +19,5 @@
       git:
         repo: "https://github.com/psautomateio/PSABlitz.git"
         dest: /psa/psablitz
-        version: "020"
+        version: "0.2.0"
         force: yes
